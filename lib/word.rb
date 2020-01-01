@@ -1,5 +1,5 @@
 class Word
-  attr_reader :name, :id
+  attr_reader :name, :word_id
 
   @@words = {}
   @@total_rows = 0
@@ -10,11 +10,39 @@ class Word
   end
 
   def self.clear
-  @@words = {}
-  @@total_rows = 0
-end
+    @@words = {}
+    @@total_rows = 0
+  end
 
   def self.all
     @@words.values()
+  end
+
+  def self.search($)
+    @@words.values().select {|word| /#{$}/i.match? word.name}
+  end
+
+  def save
+    @@words[self.id] = Word.new(self.name, self.id)
+  end
+
+  def ==(word_to_compare)
+    self.name() == word_to_compare.name()
+  end
+
+  def self.find(id)
+    @@words[id]
+  end
+
+  def update(name)
+    @name = (name != '') ? name : @name
+  end
+
+  def delete
+    @@words.delete(self.id)
+  end
+
+  def self.sort()
+    @@words.values().sort { |a, b| a.name <=> b.name}
   end
 end
