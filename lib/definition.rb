@@ -20,13 +20,19 @@ class Definition
   end
 
   def self.find(id)
-    self.name = name
-    self.word_id = word_id
-    @definitions[self.id] = Word.new(self.name, self.word_id, self.id)
+    @@definitions[id]
+  end
+
+  def self.all
+    @@definitions.values()
   end
 
   def self.clear
     @@definitions = {}
+  end
+  
+  def delete
+    @@definitions.delete(self.id)
   end
 
   def self.find_by_word(wor_id)
@@ -38,6 +44,7 @@ class Definition
     end
     definitions
   end
+
 
   def words
     Word.find(self.word_id)
