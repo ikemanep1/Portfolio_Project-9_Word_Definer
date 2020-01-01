@@ -1,5 +1,5 @@
 class Word
-  attr_reader :name, :word_id
+  attr_reader :name, :id
 
   @@words = {}
   @@total_rows = 0
@@ -18,8 +18,8 @@ class Word
     @@words.values()
   end
 
-  def self.search($)
-    @@words.values().select {|word| /#{$}/i.match? word.name}
+  def self.search(x)
+    @@words.values().select {|word| /#{x}/i.match? word.name}
   end
 
   def save
