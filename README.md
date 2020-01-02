@@ -10,20 +10,27 @@ _This application is a database for words and their definitions. People can crea
 
 ### Setup/Installation Requirements
 
-* _1: _
-* _2: navigate to the file through the terminal
-* _3: type 'atom .'_
-* _4: type 'bundle' in the terminal_
+* _1: download this application from github_
+* _2: navigate to the file through the terminal_
+* _3: type 'gem install' and 'bundle' into the console_
+* _4: type 'ruby app.rb' into the console and navigate to 'localhost:4567' in your browser_
+
+### Heroku location
+
+https://damp-earth-70832.herokuapp.com/_
 
 # Known Bugs
 
-__
+_The link provided will display an error that I as of yet cannot resolve._
 
 # specs
 | Behavior        | Input           | Outcome  |
 | ------------- |:-------------:| -----:|
 
-|  |  |  |
+| The program will store a given word within its database. | "apple" | "apple" |
+| The program will store given definitions for words stored in its database. | apple: "a red fruit" | apple: "a red fruit" |
+| The program will delete/update words when commanded to do so. | "Delete!" | "there are no words to display" |
+| The program will delete/update definitions for words stored in its database when commanded to do so. | "Update!" | "a tasty fruit" |
 
 ### Support and contact details
 

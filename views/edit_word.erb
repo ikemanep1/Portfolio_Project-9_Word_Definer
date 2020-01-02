@@ -2,15 +2,15 @@
 <div class="form">
   <form action="/words/<%= @word.id() %>" method="post">
     <input name="_method" type="hidden" value="patch">
-    <label for="name">Rename word</label>
+    <label for="name">Rename!</label>
     <input id="name" name="name" type="text">
-    <button type="submit">Update</button>
+    <button type="submit">Update!</button>
   </form>
 </div>
 <div class="form">
   <form action="/words/<%= @word.id() %>" method="post">
     <input name="_method" type="hidden" value="delete">
-    <button type="submit">Delete word</button>
-    <p class="logic"><a href="/words">Return to word list</a></p>
+    <button type="submit">Delete!</button>
+    <p class="logic"><a href="/words">Return to word list!</a></p>
   </form>
 </div>
