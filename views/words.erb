@@ -1,25 +1,25 @@
 <h1 class="opening">Welcome to Ike's word definer!</h1>
 <p class="introduction">This is an application for children to learn new words, with capabilities for storing new words and definitions for those words! All words in the database are stored below. Feel free to create, read, update, and delete words to your liking!</p>
 <div class="form">
-<h3>Need help finding a word? Use the tool below!</h3>
-<form action="/words" method="get">
-  <div class="form-group">
-    <label for="search">Search database for words</label>
-    <input id="search" name="search" class="form-control" type="text">
-  </div>
-  <button type="submit" class="btn">find me!</button>
-</form>
+  <h3>Need help finding a word? Use the tool below!</h3>
+  <form action="/words" method="get">
+    <div class="form-group">
+      <label for="search">Search database for words</label>
+      <input id="search" name="search" class="form-control" type="text">
+    </div>
+    <button type="submit" class="btn">find me!</button>
+  </form>
 </div>
 <div class="logic">
-<h3>Word database (any words you make will show up here)</h3>
-<% if @words.any? %>
+  <h3>Word database (any words you make will show up here)</h3>
+  <% if @words.any? %>
   <ul>
     <% @words.each do |word| %>
-      <li><a href="/words/<%= word.id %>"><%= word.name %></a></li>
+    <li><a href="/words/<%= word.id %>"><%= word.name %></a></li>
     <% end %>
   </ul>
-<% else %>
+  <% else %>
   <p>Hmm...There are currently no words to display.</p>
-<% end %>
-<a href="/words/new">Create a New Word!</a>
+  <% end %>
+  <a href="/words/new">Create a New Word!</a>
 </div>
