@@ -31,12 +31,17 @@ _ike.esquivelpilloud@gmail.com_
 
 ### Technologies Used
 
-_the program as written in ruby, using atom, and tested with rspec._
+_the program as written in ruby, using atom, and tested with rspec and capybara. Sinatra was used as a visual guide in the development of this project._
 
 _gems used:
 
 -'pry'
 -'rspec'
+-'sinatra'
+-'capybara'
+-'sinatra-contrib'
+
+
 # License
 
 _MIT licensing_
