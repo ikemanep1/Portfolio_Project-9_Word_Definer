@@ -17,7 +17,7 @@ _This application is a database for words and their definitions. People can crea
 
 ### Heroku location
 
-https://damp-earth-70832.herokuapp.com/_
+https://damp-earth-70832.herokuapp.com/
 
 # Known Bugs
 
@@ -26,7 +26,6 @@ _The link provided will display an error that I as of yet cannot resolve._
 # specs
 | Behavior        | Input           | Outcome  |
 | ------------- |:-------------:| -----:|
-
 | The program will store a given word within its database. | "apple" | "apple" |
 | The program will store given definitions for words stored in its database. | apple: "a red fruit" | apple: "a red fruit" |
 | The program will delete/update words when commanded to do so. | "Delete!" | "there are no words to display" |
