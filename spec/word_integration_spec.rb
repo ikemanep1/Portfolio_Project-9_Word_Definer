@@ -13,7 +13,6 @@ describe('create a word path', {:type => :feature}) do
     expect(page).to have_content('Yellow word')
   end
 end
-
 describe('create a definition path', {:type => :feature}) do
   it('creates a word and then goes to the word page') do
     word = Word.new("Apple", nil)

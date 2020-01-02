@@ -10,7 +10,6 @@ describe '#Definition' do
     @word = Word.new("apple", nil)
     @word.save()
   end
-
   describe('#==') do
     it("checks if two definitions in the database share attributes") do
       definition = Definition.new("noun: a red fruit", @word.id, nil)
@@ -18,7 +17,6 @@ describe '#Definition' do
       expect(definition).to(eq(definition2))
     end
   end
-
   describe('.all') do
     it("returns a list of all definitions for a word in the database") do
     definition = Definition.new("Apple, noun: a red fruit", @word.id, nil)
@@ -28,7 +26,6 @@ describe '#Definition' do
     expect(Definition.all).to(eq([definition, definition2]))
   end
 end
-
 describe('.clear') do
     it("clears all definitions from a word in the database") do
       definition = Definition.new("apple, noun: a red fruit", @word.id, nil)
@@ -39,7 +36,6 @@ describe('.clear') do
       expect(Definition.all).to(eq([]))
     end
   end
-
   describe('#save') do
     it("saves a definition to a word in the database") do
       definition = Definition.new("noun: a red fruit", @word.id, nil)
@@ -47,7 +43,6 @@ describe('.clear') do
       expect(Definition.all).to(eq([definition]))
     end
   end
-
   describe('.find') do
     it("finds a definition by id") do
       definition = Definition.new("apple, noun: a red fruit", @word.id, nil)
@@ -57,7 +52,6 @@ describe('.clear') do
       expect(Definition.find(definition.id)).to(eq(definition))
     end
   end
-
   describe('#update') do
   it("updates a word in the database by id") do
     word = Word.new("apple", nil)

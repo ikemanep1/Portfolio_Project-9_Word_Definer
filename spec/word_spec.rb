@@ -6,7 +6,6 @@ describe '#Word' do
   before(:each) do
     Word.clear()
   end
-
   describe('.clear') do
     it("empties all words from the database") do
       word = Word.new("apple", nil)
@@ -15,13 +14,11 @@ describe '#Word' do
       expect(Word.all).to(eq([]))
     end
   end
-
   describe('.all') do
     it("returns an empty array when there are no words") do
       expect(Word.all).to(eq([]))
     end
   end
-
   describe('#save') do
     it("adds a new word to the database") do
       word = Word.new("apple", nil)
@@ -29,7 +26,6 @@ describe '#Word' do
       expect(Word.all).to(eq([word]))
     end
   end
-
   describe('#==') do
     it("checks if two words share attributes") do
       word = Word.new("elephant", nil)
@@ -37,7 +33,6 @@ describe '#Word' do
       expect(word).to(eq(word2))
     end
   end
-
   describe('.find') do
     it("fetches a word in the database by its id") do
       word = Word.new("apple", nil)
@@ -47,7 +42,6 @@ describe '#Word' do
       expect(Word.find(word.id)).to(eq(word))
     end
   end
-
   describe('#update') do
     it('updates a word in the database by its id') do
     word = Word.new("apple", nil)
@@ -56,7 +50,6 @@ describe '#Word' do
     expect(word.name).to(eq("orange"))
   end
 end
-
   describe('#delete') do
     it("deletes a word from the database, using its id") do
       word = Word.new("apple", nil)
