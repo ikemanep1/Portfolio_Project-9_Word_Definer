@@ -1,3 +1,5 @@
+require './lib/definition'
+
 class Word
   attr_reader :name, :id
 
@@ -15,7 +17,7 @@ class Word
   end
 
   def self.all
-    @@words.values()
+    @@words.values().sort { |a, b| a.name.downcase <=> b.name.downcase}
   end
 
   def self.search(x)
@@ -35,7 +37,9 @@ class Word
   end
 
   def update(name)
-    @name = (name != '') ? name : @name
+    if name != ""
+      @name = name
+    end
   end
 
   def delete
@@ -45,4 +49,8 @@ class Word
   def self.sort()
     @@words.values().sort { |a, b| a.name <=> b.name}
   end
+
+  def definitions
+   Definition.find_by_word(self.id)
+ end
 end
