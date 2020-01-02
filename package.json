@@ -1,1 +1,4 @@
+"scripts": {
+    "start": "webpack-dev-server --hot"
+}
 { "engines" : { "node": "12.13.0" } }

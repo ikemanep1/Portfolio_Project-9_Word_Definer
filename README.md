@@ -10,7 +10,7 @@ _This application is a database for words and their definitions. People can crea
 
 ### Setup/Installation Requirements
 
-* _1: download from Github_
+* _1: _
 * _2: navigate to the file through the terminal
 * _3: type 'atom .'_
 * _4: type 'bundle' in the terminal_
