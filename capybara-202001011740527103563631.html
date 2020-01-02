@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ike's word definer</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Word Name: Apple</h1>
+
+<p>Definitions for Apple</p>
+
+    <ul>
+    </ul>
+
+<p>Add a definition:</p>
+
+<form action="/words/3/definitions" method="post">
+  <div class="form-group">
+    <label for="definition_name">Definition</label>
+    <input id="definition_name" name="definition_name" class="form-control" type="text">
+  </div>
+  <button type="submit" class="btn">Add Definition</button>
+</form>
+
+<p><a href="/words/3/edit">Edit word</a></p>
+<a href="/words">Return to word list</a>
+
+    </div>
+  </body>
+</html>

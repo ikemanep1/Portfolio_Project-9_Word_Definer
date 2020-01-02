@@ -1,4 +1,13 @@
-<h1>Welcome to Ike's word definer!</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ike's word definer</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome to Ike's word definer!</h1>
 <p class="introduction">This is an application for children to learn new words, with capabilities for storing new words and definitions for those words! All words in the database are stored below. Feel free to create, read, update, and delete words to your liking!</p>
 
 <h3>Need help finding a word? Use the tool below!</h3>
@@ -12,14 +21,12 @@
 
 <h3>Word database (any words you make will show up here)</h3>
 
-<% if @words.any? %>
   <ul>
-    <% @words.each do |word| %>
-      <li><a href="/words/<%= word.id %>"><%= word.name %></a></li>
-    <% end %>
+      <li><a href="/words/1">apple</a></li>
   </ul>
-<% else %>
-  <p>Hmm...There are currently no words to display.</p>
-<% end %>
 
 <a href="/words/new">Create a New Word!</a>
+
+    </div>
+  </body>
+</html>
