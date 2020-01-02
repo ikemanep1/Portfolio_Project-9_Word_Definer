@@ -39,7 +39,7 @@ _ike.esquivelpilloud@gmail.com_
 
 _the program as written in ruby, using atom, and tested with rspec and capybara. Sinatra was used as a visual guide in the development of this project._
 
-_gems used:
+### Gems used:
 
 -'pry'
 -'rspec'
