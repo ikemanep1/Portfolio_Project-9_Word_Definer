@@ -16,10 +16,10 @@
   <ul>
     <% @words.each do |word| %>
     <li><a href="/words/<%= word.id %>"><%= word.name %></a></li>
-    <% end %>
   </ul>
+  <% end %>
   <% else %>
   <p>Hmm...There are currently no words to display.</p>
   <% end %>
-  <a href="/words/new">Create a New Word!</a>
+    <p><a href="/words/new">Create a New Word!</a></p>
 </div>

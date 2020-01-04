@@ -1,5 +1,5 @@
 <h1 class="opening">Word Name: <%= @word.name %></h1>
-<p class="opening">Definitions for <%= @word.name %></p>
+<p class="opening">Definitions for <%= @word.name %>:</p>
 <div class="logic">
   <% if @word.definitions %>
   <ul>
@@ -7,8 +7,6 @@
     <li><a href="/words/<%= @word.id %>/definitions/<%= definition.id %>"><%= definition.name %></a></li>
     <% end %>
   </ul>
-  <% else %>
-  <p>There are no definitions listed for this word yet.</p>
   <% end %>
 </div>
 <div class="form">
