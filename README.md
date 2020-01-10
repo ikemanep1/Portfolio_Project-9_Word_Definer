@@ -17,7 +17,7 @@ _This application is a database for words and their definitions. People can crea
 
 ### Heroku location
 
-https://enigmatic-savannah-93297.herokuapp.com/words/1/edit
+https://enigmatic-savannah-93297.herokuapp.com
 
 # Known Bugs
 
