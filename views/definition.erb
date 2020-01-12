@@ -1,9 +1,9 @@
 <div class="opening">
 <h2>Definition: <%= @definition.name %></h2>
-<h3>Word: <%= @definition.words.name %></h3>
+<h3>Word: <%= @definition.word.name %></h3>
 </div>
 <div class="form">
-<form action="/words/<%= @definition.words.id %>/definitions/<%= @definition.id %>" method="post">
+<form action="/words/<%= @definition.word.id %>/definitions/<%= @definition.id %>" method="post">
   <input name="_method" type="hidden" value="patch">
   <label for="name">Rename!</label>
   <input id="name" name="name" type="text">
@@ -11,11 +11,11 @@
 </form>
 </div>
 <div class="form">
-<form action="/words/<%= @definition.words.id %>/definitions/<%= @definition.id %>" method="post">
+<form action="/words/<%= @definition.word.id %>/definitions/<%= @definition.id %>" method="post">
   <input name="_method" type="hidden" value="delete">
   <button type="submit">Delete!</button>
 </form>
 </div>
 <div class="logic">
-<a href="/words/<%= @definition.words.id %>">Back to <%= @definition.words.name %></a>
+<a href="/words/<%= @definition.word.id %>">Back to <%= @definition.word.name %></a>
 </div>

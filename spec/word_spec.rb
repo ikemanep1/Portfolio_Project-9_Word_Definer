@@ -1,65 +1,88 @@
 require 'rspec'
 require 'word'
+require 'definition'
 require 'pry'
+require "spec_helper"
 
 describe '#Word' do
-  before(:each) do
-    Word.clear()
-  end
-  describe('.clear') do
-    it("empties all words from the database") do
-      word = Word.new("apple", nil)
-      word.save()
-      Word.clear()
-      expect(Word.all).to(eq([]))
+
+  describe '#Word' do
+
+    describe('.all') do
+      it("returns an empty array when there are no words") do
+        expect(Word.all).to(eq([]))
+      end
     end
-  end
-  describe('.all') do
-    it("returns an empty array when there are no words") do
-      expect(Word.all).to(eq([]))
+
+    describe('#save') do
+      it("saves an word") do
+        word = Word.new({:name => "A Love Supreme", :id => nil})
+        word.save()
+        word2 = Word.new({:name => "Blue", :id => nil})
+        word2.save()
+        expect(Word.all).to(eq([word, word2]))
+      end
     end
-  end
-  describe('#save') do
-    it("adds a new word to the database") do
-      word = Word.new("apple", nil)
-      word.save()
-      expect(Word.all).to(eq([word]))
+
+    describe('.clear') do
+      it("clears all words") do
+        word = Word.new({:name => "A Love Supreme", :id => nil})
+        word.save()
+        word2 = Word.new({:name => "Blue", :id => nil})
+        word2.save()
+        Word.clear
+        expect(Word.all).to(eq([]))
+      end
     end
-  end
-  describe('#==') do
-    it("checks if two words share attributes") do
-      word = Word.new("elephant", nil)
-      word2 = Word.new("elephant", nil)
-      expect(word).to(eq(word2))
+
+    describe('#==') do
+      it("is the same word if it has the same attributes as another word") do
+        word = Word.new({:name => "Blue", :id => nil})
+        word2 = Word.new({:name => "Blue", :id => nil})
+        expect(word).to(eq(word2))
+      end
     end
-  end
-  describe('.find') do
-    it("fetches a word in the database by its id") do
-      word = Word.new("apple", nil)
-      word.save()
-      word2 = Word.new("entropy", nil)
-      word2.save()
-      expect(Word.find(word.id)).to(eq(word))
+
+    describe('.find') do
+      it("finds an word by id") do
+        word = Word.new({:name => "A Love Supreme", :id => nil})
+        word.save()
+        word2 = Word.new({:name => "Blue", :id => nil})
+        word2.save()
+        expect(Word.find(word.id)).to(eq(word))
+      end
     end
-  end
-  describe('#update') do
-    it('updates a word in the database by its id') do
-    word = Word.new("apple", nil)
-    word.save()
-    word.update("orange")
-    expect(word.name).to(eq("orange"))
-  end
-end
-  describe('#delete') do
-    it("deletes a word from the database, using its id") do
-      word = Word.new("apple", nil)
-      word.save()
-      word2 = Word.new("entropy", nil)
-      word2.save()
-      word3 = Word.new("fulcrum", nil)
-      word3.save()
-      word.delete()
-      expect(Word.all).to(eq([word2, word3]))
+
+    describe('#update') do
+      it("updates an word by id") do
+        word = Word.new({:name => "A Love Supreme", :id => nil})
+        word.save()
+        word.update("A Love Supreme")
+        expect(word.name).to(eq("A Love Supreme"))
+      end
+    end
+
+    describe('#delete') do
+      it("deletes all definitions belonging to a deleted word") do
+        word = Word.new({:name => "A Love Supreme", :id => nil})
+        word.save()
+        definition = Definition.new({:name => "Naima", :word_id => word.id, :id => nil})
+        definition.save()
+        word.delete()
+        expect(Definition.find(definition.id)).to(eq(nil))
+      end
+    end
+
+    describe('#definitions') do
+      it("returns an word's definitions") do
+        word = Word.new({:name => "A Love Supreme", :id => nil})
+        word.save()
+        definition = Definition.new({:name => "Naima", :word_id => word.id, :id => nil})
+        definition.save()
+        definition2 = Definition.new({:name => "Cousin Mary", :word_id => word.id, :id => nil})
+        definition2.save()
+        expect(word.definitions).to(eq([definition, definition2]))
+      end
     end
   end
 end

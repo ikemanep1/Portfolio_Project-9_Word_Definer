@@ -9,18 +9,18 @@ describe('create a word path', {:type => :feature}) do
     save_and_open_page
     click_on('Create a New Word!')
     fill_in('word_name', :with => 'Yellow word')
-    click_on('Create word!')
+    click_on('Create!')
     expect(page).to have_content('Yellow word')
   end
 end
 describe('create a definition path', {:type => :feature}) do
   it('creates a word and then goes to the word page') do
-    word = Word.new("Apple", nil)
+    word = Word.new(:name => "Apple", :id => nil)
     word.save
     visit("/words/#{word.id}")
     save_and_open_page
     fill_in('definition_name', :with => 'A red fruit')
-    click_on('Add Definition')
+    click_on('Add!')
     expect(page).to have_content('A red fruit')
   end
 end
