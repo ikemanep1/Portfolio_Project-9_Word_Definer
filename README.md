@@ -21,7 +21,7 @@ https://enigmatic-savannah-93297.herokuapp.com
 
 # Known Bugs
 
-_The link provided will display an error that I as of yet cannot resolve._
+__
 
 # specs
 | Behavior        | Input           | Outcome  |
